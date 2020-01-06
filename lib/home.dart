@@ -36,7 +36,7 @@ class HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Welcome " + user.email,
+          "Welcome " + user.email + "\nActive users:",
           overflow: TextOverflow.fade,
         ),
         actions: <Widget>[
@@ -64,20 +64,19 @@ class HomeState extends State<Home> {
       itemBuilder: (context, index) {
         return Card(
           borderOnForeground: true,
-         child : 
-         Padding(
-           padding: EdgeInsets.all(8.0),
-           child: Center(
-           child: Text(list[index],
-          style: TextStyle(
-           fontSize: 20,
-           fontStyle: FontStyle.italic,
-           color: Colors.redAccent
-         ),
-         ),
-         ),
-         ),
-         elevation: 10.0,
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: Text(
+                list[index],
+                style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.redAccent),
+              ),
+            ),
+          ),
+          elevation: 10.0,
         );
       },
     );
@@ -103,8 +102,7 @@ class HomeState extends State<Home> {
         });
   }
 
-  Future<List<String>> getUsers() async
-  {
+  Future<List<String>> getUsers() async {
     Completer<List<String>> l = new Completer<List<String>>();
     List<String> x = [];
     FirebaseDatabase.instance
@@ -120,7 +118,8 @@ class HomeState extends State<Home> {
       l.complete(x);
     });
     return l.future;
-}
+  }
+
   updateList(List<String> value) {
     setState(() {
       list = value;
