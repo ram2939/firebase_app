@@ -18,7 +18,7 @@ class Home extends StatefulWidget {
   void initState() 
   {
     super.initState();
-    FirebaseDatabase.instance.reference().child("users").once().then((DataSnapshot snapshot) {
+      FirebaseDatabase.instance.reference().child("users").once().then((DataSnapshot snapshot) {
       final value = snapshot.value as Map;
       for (final key in value.keys) {
 
@@ -26,6 +26,7 @@ class Home extends StatefulWidget {
         list.add(value[key]['email'].toString());
       }
 });
+    
     database.onChildChanged.listen(onchildchanged);
   }
   @override
