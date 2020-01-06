@@ -78,7 +78,7 @@ Future<void> signin() async
 
       update(user.uid);
       Navigator.pop(context);
-      Navigator.push(context,MaterialPageRoute(builder: (context)=>new Home(user)));
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>new Home(user)));
       }
       catch(e)
       {

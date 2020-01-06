@@ -1,4 +1,3 @@
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_app/Signup.dart';
 import 'package:firebase_app/SignIn.dart';
@@ -8,7 +7,7 @@ Widget build(BuildContext context)
 {
   return Scaffold(
     appBar: AppBar(
-      title: Text("Welcome"),
+      title: Text("My Firebase App"),
     ),
     body: Container(
       child: Column(
@@ -17,10 +16,12 @@ Widget build(BuildContext context)
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           RaisedButton(
+            padding: EdgeInsets.all(5.0),
             color: Colors.black,
             child: Text("Sign In",
             style: TextStyle(
-              color: Colors.white
+              color: Colors.white,
+              fontSize: 20.0
             ),
             ),
             onPressed: () 
@@ -29,10 +30,12 @@ Widget build(BuildContext context)
              },
           ),
           RaisedButton(
+            padding: EdgeInsets.all(5.0),
             color: Colors.black,
             child: Text("Sign Up",
             style: TextStyle(
-              color: Colors.white
+              color: Colors.white,
+              fontSize: 20.0
             ),
             ),
             onPressed: () { 
