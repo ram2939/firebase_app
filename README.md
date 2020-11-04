@@ -1,7 +1,6 @@
-# firebase_app
+# Firebase App
 
-A new Flutter project.
-
+A flutter app that detects presence of users online on the app
 ## Getting Started
 
 This project is a starting point for a Flutter application.
